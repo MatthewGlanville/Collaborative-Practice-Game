@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &274965073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c95e9e195f656242b76b6d87e0cd36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerUI: {fileID: 2736358263165873324, guid: e7d87dc50d4f769419b594ae384a9c1f, type: 3}
+  TowerUI: {fileID: 7448882260167480257, guid: e7d87dc50d4f769419b594ae384a9c1f, type: 3}
 --- !u!1 &1289554619
 GameObject:
   m_ObjectHideFlags: 0

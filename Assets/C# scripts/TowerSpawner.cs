@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class TowerSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject TowerUI;
-    private bool UISpawned = false;
-    private GameObject clone;
+    private bool TowerSpawned = false;
+    [SerializeField] private GameObject RedBloodCell;
+    [SerializeField] private GameObject WhiteBloodCell;
+    [SerializeField] private GameObject Platelets;
     // Start is called before the first frame update
     void Start()
-    { 
+    {
+        
     }
 
     // Update is called once per frame
@@ -17,18 +19,20 @@ public class TowerSpawner : MonoBehaviour
     {
         
     }
-    public void SpawnTowerUI()
+    public void SpawnRedBloodCell()
     {
-        if (UISpawned == false)
-        {
-            clone = Instantiate(TowerUI, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
-            UISpawned = true;
-            Debug.Log(UISpawned);
-        }
-        else if (UISpawned == true)
-        {
-            Destroy(clone); //fucking DESTROY THE CLONE YOU BRAINDEAD MACHINE
-            UISpawned = false;
-        }
+
+    }
+    public void SpawnWhiteBloodCell()
+    {
+
+    }
+    public void SpawnPlatelets()
+    {
+
+    }
+    public void Sell()
+    {
+
     }
 }
