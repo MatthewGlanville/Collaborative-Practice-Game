@@ -23,7 +23,7 @@ public class UISpawner : MonoBehaviour
         {
             clone = Instantiate(TowerUI, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
             UISpawned = true;
-            Debug.Log(UISpawned);
+ 
         }
         else if (UISpawned == true)
         {
