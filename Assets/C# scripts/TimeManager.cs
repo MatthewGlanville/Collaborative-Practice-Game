@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 using TMPro; 
 public class TimeManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class TimeManager : MonoBehaviour
         {
             if (value < 0)
             {
-                value = 0;
+                value = 0.0f;
             }
             if (value < timeLeft )
             {
@@ -30,6 +31,7 @@ public class TimeManager : MonoBehaviour
             paused = value; 
         }
     }
+    private string timeString; 
     // Start is called before the first frame update
     void Start()
     {
@@ -42,9 +44,16 @@ public class TimeManager : MonoBehaviour
         if (paused == false)
         {
             TimeLeft -= Time.deltaTime;
-            string timeString = TimeLeft.ToString();
-            timeString = timeString.Substring(0, 4);
-            TimeUI.text = timeString; 
+            if (TimeLeft == 0)
+            {
+                SceneManager.LoadScene("GameWonScene");
+            }
+            else
+            {
+                timeString = TimeLeft.ToString(); // gets the timer value to 1 decimal place. 
+                timeString = timeString.Substring(0, 4);
+                TimeUI.text = timeString;
+            }
         }
     }
 }
