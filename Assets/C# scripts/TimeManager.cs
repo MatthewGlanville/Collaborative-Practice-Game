@@ -51,6 +51,10 @@ public class TimeManager : MonoBehaviour
             else
             {
                 timeString = TimeLeft.ToString(); // gets the timer value to 1 decimal place. 
+                if (timeString.Length < 4)
+                {
+                    timeString = timeString.Substring(0, timeString.Length);
+                }
                 timeString = timeString.Substring(0, 4);
                 TimeUI.text = timeString;
             }

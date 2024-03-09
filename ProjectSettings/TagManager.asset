@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - New tag
   layers:
   - Default
   - TransparentFX
@@ -11,10 +12,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - 'Layer 0 '
+  - Layer 1
+  - Layer 2
+  - Layer 3
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Layer 0
+    uniqueID: 1017385005
+    locked: 0
+  - name: Layer 1
+    uniqueID: 3632807301
+    locked: 0
+  - name: Layer 2
+    uniqueID: 583549083
+    locked: 0
+  - name: Layer 3
+    uniqueID: 299674307
     locked: 0
