@@ -37,4 +37,12 @@ public class Bacteria : GameManager
         }
         
     }
+    public void takeDMG()
+    {
+        health -= 1; 
+        if (health < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
