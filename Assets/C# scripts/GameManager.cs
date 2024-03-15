@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text OxygenUI;
@@ -22,13 +23,6 @@ public class GameManager : MonoBehaviour
     public static int Health
     {
         get { return health; }
-        set
-        {
-            if (value < 20 && value > 0)
-            {
-                health = value; 
-            }
-        }
     }
     // Start is called before the first frame update
     void Start()
@@ -42,5 +36,13 @@ public class GameManager : MonoBehaviour
     {
         OxygenUI.text = Oxygen.ToString();
         HealthUI.text = Health.ToString(); 
+    }
+    public static void takeDmg()
+    {
+        health -= 1; 
+        if (health < 0)
+        {
+            SceneManager.LoadScene("GameLostScene");
+        }
     }
 }

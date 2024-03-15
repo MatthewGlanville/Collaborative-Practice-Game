@@ -6,11 +6,12 @@ public class BacteriaSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject Bacteria;
     private GameObject BacteriaClone;
-    private float delay = 5.0f;
+    [SerializeField] private float spawnSpeed;
+    private float delay;
     // Start is called before the first frame update
     void Start()
     {
-        
+        delay = spawnSpeed;
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class BacteriaSpawner : MonoBehaviour
         delay -= Time.deltaTime;
         if (delay <= 0)
         {
-            delay = 5.0f;
+            delay = spawnSpeed;
             BacteriaClone = Instantiate(Bacteria, new Vector3(-10,-4,0), Quaternion.identity);
         }
     }

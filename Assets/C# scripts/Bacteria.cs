@@ -2,26 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bacteria : MonoBehaviour
+public class Bacteria : GameManager
 {
     [SerializeField] private float movespeed = 5;
     [SerializeField] private float health = 20;
-    [SerializeField] private GameObject Point1; 
+    [SerializeField] private List<GameObject> Points;
+    private int pointIndex; 
+    private GameObject pointChased; 
     private bool passedPoint1 = false; 
     private float xMove = 3;
     private float yMove = 0;
     // Start is called before the first frame update
     void Start()
     {
+            pointChased = Points[0];
+            Debug.Log(pointChased.transform.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = gameObject.transform.position + new Vector3(xMove * movespeed * Time.deltaTime, yMove * movespeed * Time.deltaTime, 0);
-        if (gameObject.transform.position.x > 3.5)
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, pointChased.transform.position, movespeed * Time.deltaTime);
+        if (gameObject.transform.position == pointChased.transform.position)
         {
-            Destroy(gameObject);
+            pointIndex += 1;
+            if (pointIndex > Points.Count-1)
+            {
+                GameManager.takeDmg();
+                Destroy(gameObject);
+            }
+            else {
+                pointChased = Points[pointIndex];
+            }
         }
         
     }
