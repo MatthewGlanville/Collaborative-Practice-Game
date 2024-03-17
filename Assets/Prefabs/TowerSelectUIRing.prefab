@@ -742,8 +742,8 @@ MonoBehaviour:
   RedBloodCell: {fileID: 5743441407792389896, guid: 3d1671f7590fe374d964e18bb87eeae9, type: 3}
   WhiteBloodCell: {fileID: 7486466755725233324, guid: a3c10fb3a0e243f43a9fc661bfae815a, type: 3}
   Platelets: {fileID: 7229821704137491776, guid: ec58640114cac0547aa8fcb5786190c1, type: 3}
-  Mucus: {fileID: 0}
-  StomachAcid: {fileID: 0}
+  Mucus: {fileID: 4897479033095054507, guid: 803274f00e3941849b7f202507d41fc8, type: 3}
+  StomachAcid: {fileID: 8198906978171170702, guid: ed7f4bcc29e75884587cf3787aac7d93, type: 3}
 --- !u!210 &3832488636874448181
 SortingGroup:
   m_ObjectHideFlags: 0
