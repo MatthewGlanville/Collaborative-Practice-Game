@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WhiteBloodCellShotScript : MonoBehaviour
+public class ShotScript : MonoBehaviour
 {
     public GameObject target; 
-    [SerializeField] private int movespeed = 20; 
+    [SerializeField] private int movespeed = 20;
+    [SerializeField] private string shotType = "w"; // denotes the shot type, makes the scripts more reusable 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,18 @@ public class WhiteBloodCellShotScript : MonoBehaviour
             if (gameObject.transform.position == target.transform.position)
             {
                 Debug.Log("me hit :)");
-                target.GetComponent<Bacteria>().takeDMG();
+                if (shotType == "w")
+                {
+                    target.GetComponent<Bacteria>().takeDMG();
+                }
+                else if (shotType == "m")
+                {
+                    target.GetComponent<Bacteria>().trap();
+                }
+                else if (shotType == "p")
+                {
+                    target.GetComponent<Bacteria>().slow();
+                }
                 Destroy(gameObject);
             }
         }
