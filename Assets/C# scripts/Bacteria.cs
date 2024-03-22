@@ -56,6 +56,7 @@ public class Bacteria : GameManager
     }
     public void takeDMG()
     {
+        Debug.Log("owwiee");
         health -= 1; 
         if (health < 0)
         {

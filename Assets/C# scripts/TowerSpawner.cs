@@ -75,6 +75,11 @@ public class TowerSpawner : GameManager
             Destroy(MucusClone);
             GameManager.Oxygen += 20;
         }
+        else if (StomachAcidClone != null)
+        {
+            Destroy(StomachAcidClone);
+            GameManager.Oxygen += 12; 
+        }
     }
     public void SpawnMucus()
     {
@@ -84,6 +89,8 @@ public class TowerSpawner : GameManager
     }
     public void SpawnAcid()
     {
-
+        GameManager.Oxygen -= 25;
+        StomachAcidClone = Instantiate(StomachAcid, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+        TowerSpawned = true; 
     }
 }
