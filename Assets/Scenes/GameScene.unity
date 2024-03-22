@@ -149,7 +149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 137100215}
   m_Layer: 6
-  m_Name: parent
+  m_Name: NodeDaddy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

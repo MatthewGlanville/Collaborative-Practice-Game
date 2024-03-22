@@ -10,6 +10,11 @@ public class TowerSpawner : GameManager
     [SerializeField] private GameObject Platelets;
     [SerializeField] private GameObject Mucus;
     [SerializeField] private GameObject StomachAcid;
+    [SerializeField] private int redCost = 30;
+    [SerializeField] private int whiteCost = 20;
+    [SerializeField] private int plateletCost = 10;
+    [SerializeField] private int mucusCost = 40;
+    [SerializeField] private int acidCost = 25;
     private GameObject RedBloodClone;
     private GameObject WhiteBloodClone;
     private GameObject PlateletClone;
@@ -29,7 +34,8 @@ public class TowerSpawner : GameManager
     {
         if ((TowerSpawned == false) && (GameManager.Oxygen > 30))
         {
-            GameManager.Oxygen -= 30; 
+            GameManager.Oxygen -= redCost
+                ; 
             RedBloodClone = Instantiate(RedBloodCell, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
             TowerSpawned = true;
             Debug.Log("huh");
@@ -39,7 +45,7 @@ public class TowerSpawner : GameManager
     {
         if ((TowerSpawned == false)&& (GameManager.Oxygen > 20))
         {
-            GameManager.Oxygen -= 20;
+            GameManager.Oxygen -= whiteCost;
             WhiteBloodClone = Instantiate(WhiteBloodCell, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
             TowerSpawned = true;
         }
@@ -48,7 +54,7 @@ public class TowerSpawner : GameManager
     {
         if ((TowerSpawned == false) && (GameManager.Oxygen > 10)) 
         {
-            GameManager.Oxygen -= 10;
+            GameManager.Oxygen -= plateletCost;
             PlateletClone = Instantiate(Platelets, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
             TowerSpawned = true;
         }
@@ -83,13 +89,13 @@ public class TowerSpawner : GameManager
     }
     public void SpawnMucus()
     {
-        GameManager.Oxygen -= 40;
+        GameManager.Oxygen -= mucusCost;
         MucusClone = Instantiate(Mucus, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
         TowerSpawned = true;
     }
     public void SpawnAcid()
     {
-        GameManager.Oxygen -= 25;
+        GameManager.Oxygen -= acidCost;
         StomachAcidClone = Instantiate(StomachAcid, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
         TowerSpawned = true; 
     }
